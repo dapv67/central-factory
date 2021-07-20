@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="section p-section">
+      <div class="encabezado-tablas">
+        <h1 class="title m-0">Almacen</h1>
+        <div class="btns-almacen">
+          <button class="button is-link" id="openAddModal" data-target="#modal">
+            <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+            Agregar
+          </button>
+          <button
+            class="button is-success"
+            id="openEntradaModal"
+            data-target="#modal"
+          >
+            Entrada
+          </button>
+          <button
+            class="button is-danger"
+            id="openSalidaModal"
+            data-target="#modal"
+          >
+            Salida
+          </button>
+        </div>
+      </div>
+      <div class="columns mt-3">
+        <div class="column is-3 tarjeta">
+          <div class="part-1">
+            <p class="dinero">
+              $ 120,000
+            </p>
+            <p class="texto ">Total en materias primas</p>
+          </div>
+          <div class="part-2">
+            <img src="./img/grafica.svg" alt="">
+          </div>
+        </div>
+        <div class="column is-3 tarjeta">
+          <div class="part-1">
+            <p class="dinero">
+              $ 120,000
+            </p>
+            <p class="texto ">Total en insumos</p>
+          </div>
+          <div class="part-2">
+            <img src="./img/grafica.svg" alt="">
+          </div>
+        </div>
+        <div class="column is-3 tarjeta">
+          <div class="part-1">
+            <p class="dinero">
+              $ 120,000
+            </p>
+            <p class="texto ">Total en núcleos </p>
+          </div>
+          <div class="part-2">
+            <img src="./img/grafica.svg" alt="">
+          </div>
+        </div>
+        <div class="column is-3 tarjeta">
+          <div class="part-1">
+            <p class="dinero is-negro">
+              $ 820,000
+            </p>
+            <p class="texto ">Total</p>
+          </div>
+          <div class="part-2">
+            <img src="./img/grafica.svg" alt="">
+          </div>
+        </div>
+        
+      </div>
+      <div class="mb-6 mt-5">
+        <h2 class="subtitle">Materias primas: Comprada & Procesada</h2>
+        <div class="carta">
+        
+          <div class="card wrapper-carta">
+            <header class="card-header">
+              <p class="card-header-title">Solbent</p>
+              <p class="dinero ">
+                $50,000
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p class="">Disponible</p>
+                <p class="card-footer-item title has-text-success is-size-5">
+                  500 kg
+                </p>
+                <p class="">Procesada</p>
+                <p class="card-footer-item title gris is-size-5">
+                  300 kg
+                </p>
+              </div>
+              
+            </div>
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item" onclick="updateMateriaModal()">Editar</a>
+              <a href="#" class="card-footer-item" onclick="eliminarArticulo('1','Item 2','1')">Eliminar</a>
+            </footer>
+          </div>
+         
+        </div>
+        
+      </div>
+      <div class="mb-6">
+        <h2 class="subtitle">Núcleos de plástico</h2>
+        <div class="carta">
+        
+          <div class="card wrapper-carta">
+            <header class="card-header">
+              <p class="card-header-title">4CV</p>
+              <p class="dinero ">
+                $201,000
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p class="card-footer-item title has-text-success is-size-4">
+                  25,000 pzs
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item" onclick="updateTaponModal()">Editar</a>
+              <a href="#" class="card-footer-item" onclick="eliminarArticulo('2','3CV','3')">Eliminar</a>
+            </footer>
+          </div>
+
+          <div class="card wrapper-carta">
+            <header class="card-header">
+              <p class="card-header-title">3CP</p>
+              <p class="dinero ">$1,000.00</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p class="card-footer-item title has-text-danger is-size-4">
+                  1250
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+  
+              <a href="#" class="card-footer-item">Edit</a>
+              <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h1 class="title m-0">E/S de materias primas e insumos</h1>
+      <div class="container is-full">
+        <table id="example4" class="table is-striped" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Item</th>
+              <th>Cantidad</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody> 
+            <tr>
+              <td>Hoy</td>
+              <td>
+                Standard I
+              </td>
+              <td>
+                <p class="has-text-success has-text-weight-bold">120 kg</p>
+              </td>
+
+              <td class="accion">
+                <span class="icon" id="openSeeModal">
+                  <img
+                    src="./img/ic_eye_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <span class="icon" id="openUpdateModal">
+                  <img
+                    src="./img/ic_edit_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <span class="icon" id="openDeleteModal">
+                  <img
+                    src="./img/ic_delete_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+              </td>
+            </tr>
+             <tr>
+              <td>Hoy</td>
+              <td>
+                Gas
+              </td>
+              <td>
+                <p class="has-text-danger has-text-weight-bold">120 kg</p>
+              </td>
+
+              <td class="accion">
+                <span class="icon" id="openSeeModal">
+                  <img
+                    src="./img/ic_eye_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <span class="icon" id="openUpdateModal">
+                  <img
+                    src="./img/ic_edit_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <span class="icon" id="openDeleteModal">
+                  <img
+                    src="./img/ic_delete_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+              </td>
+            </tr>
+            
+          </tbody>
+          <tfoot>
+            <th>Fecha</th>
+            <th>Item</th>
+            <th>Cantidad</th>
+            <th>Acción</th>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <!-- addMateriaModal -->
+    <div id="materiaModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Agregar Materia Prima</p>
+          
+          <button class="delete close-modal" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body p-2">
+          <!-- Content ... -->
+          <form action="" id="frmmateria" method="POST">
+            <h1 class="is-size-4 mb-3">Detalles</h1>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Nombre</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="e.g. 30gr"
+                      name="nombreMateria"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Stock (Kg)</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 50kg"
+                      name="stockMateria"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">          
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Punto de reorden</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 40kg"
+                      name="reordenMateria"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3">
+                <div class="field">
+                  <label class="label">Mín</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 30kg"
+                      name="minMateria"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3">
+                <div class="field">
+                  <label class="label">Máx</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 300kg"
+                      name="maxMateria"
+                    />
+                  </div>
+                </div>
+              </div>          
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Precio unitario</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. $3.00"
+                      name="precioMateria"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          <button  class="button is-azul btn-modal" id="addMateria">Agregar</button>
+        
+          </form>
+        </section>
+        
+      </div>
+    </div>
+    <!-- entradaMateriaModal -->
+    <div id="entradaMPModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Entrada: Compra de materia prima</p>
+          
+          <button class="delete close-modal" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body p-2">
+          <!-- Content ... -->
+          <form action="" id="frmentradamp" method="POST">
+            <h1 class="is-size-5 mb-3">Detalles</h1>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Materia prima</label>
+                  <div class="control">
+                    <div class="select w-100">
+                      <select class="w-100" name="materia[]">
+                        <option disabled selected>Seleccione una opción</option>
+                       <option value="1">Standard</option>;
+                         
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Proveedor</label>
+                  <div class="control">
+                    <div class="select w-100">
+                      <select class="w-100" name="proveedor[]">
+                        <option disabled selected>Seleccione una opción</option>
+                        <option value="Aviles">Aviles</option>
+                        <option value="Oscar">Oscar</option>
+                        <option value="Lupe">Lupe</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">          
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Cantidad</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 100"
+                      name="cantidad"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Fecha</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="date"
+                      placeholder=""
+                      name="fecha"
+                    />
+                  </div>
+                </div>
+              </div>          
+            </div>
+          <button  class="button is-success btn-modal" id="entradaMateriaPrima">Agregar</button>
+          </form>
+        </section>
+        
+      </div>
+    </div>
+    <!-- salidaModal -->
+    <div id="salidaRafiaModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Sálida de Rafia</p>
+          
+          <button class="delete close-modal" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body p-2">
+          <!-- Content ... -->
+          <form action="" id="frmsalidarafia" method="POST">
+            <h1 class="is-size-5 mb-3">Detalles</h1>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Cantidad</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 100"
+                      name="cantidad"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Fecha</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="date"
+                      placeholder=""
+                      name="fecha"
+                    />
+                  </div>
+                </div>
+              </div> 
+            </div>
+            
+          <button  class="button is-danger btn-modal" id="salidaRafia">Agregar</button>
+        
+          </form>
+        </section>
+        
+      </div>
+    </div>
+ 
+    <script>
+      //Eliminamos registro del artículo
+      function eliminarArticulo(id,nombre,clasificacionArticulo) {
+        $("#eliminarArticuloModal").addClass("is-active");
+        $('#idE').val(id);
+        $('#clasificacionArticulo').val(clasificacionArticulo);
+        $('#nombre_articulo').text(nombre);
+      }
+      function updateInsumoModal() {    
+        $("#updateInsumoModal").addClass("is-active");    
+      }
+      function updateTaponModal() {
+        $("#updateTaponModal").addClass("is-active");
+      }
+      function updateMateriaModal(array) {
+        $("#updateMateriaModal").addClass("is-active");
+      }
+      $(document).ready(function () {
+        $("#example").DataTable();
+        $("#example2").DataTable();
+        $("#example3").DataTable();
+        $("#example4").DataTable();
+      });
+      //Almacen
+      //Abrimos modal para agregar articulo
+      $("#openAddModal").click(function () {
+        $("#materiaModal").addClass("is-active");
+      });
+      //Abrimos modal para agregar entrada
+      $("#openEntradaModal").click(function () {
+        $("#entradaMPModal").addClass("is-active");
+      });
+      //Abrimos modal para agregar salida
+      $("#openSalidaModal").click(function () {
+        $("#salidaRafiaModal").addClass("is-active");
+      });
+      //Cerramos modal
+      $(".close-modal").click(function () {
+        $(".modal").removeClass("is-active");
+      });
+      
+    </script>
+  </body>
+</html>

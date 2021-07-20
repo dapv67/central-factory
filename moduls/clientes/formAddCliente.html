@@ -1,6 +1,3 @@
-<?php 
-  require('../../includes/conexion.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,34 +16,60 @@
             <h1 class="titulo-apartado-form">Núcleos requeridos</h1>
           </div>
           <div class="columns carta">
-            <?php 
-              $sql="SELECT inches,requirement,color,weight,M.name,P.plug_id from plug P, mix M where P.mix_id = M.mix_id";
-              $result=mysqli_query($con,$sql);
-              while($mostrar=mysqli_fetch_array($result)){
-            ?>
             <div class="column is-4">
               <div class="tarjeta-nucleo">
                 <div class="tarjeta-nucleo--encabezado">
-                  <h2 class="tarjeta-nucleo--titulo">Núcleo: <?php echo $mostrar['inches'] ."".$mostrar['requirement']."".$mostrar['color'] ?></h2>
-                  <input name="nucleo[]" type="checkbox" value="<?php echo $mostrar['plug_id'] ?>">
+                  <h2 class="tarjeta-nucleo--titulo">Núcleo: 3CV</h2>
+                  <input name="nucleo[]" type="checkbox" value="1">
                 </div>
                 <div class="tarjeta-nucleo--contenido">
                   <div>
                     <p class="tarjeta-nucleo--elemento-negro">Peso</p>
-                    <p class="tarjeta-nucleo--elemento-gris"><?php echo $mostrar['weight'] ?> gr</p>
+                    <p class="tarjeta-nucleo--elemento-gris">125 gr</p>
                   </div>
                   <div>
                     <p class="tarjeta-nucleo--elemento-negro">Mezcla</p>
-                    <p class="tarjeta-nucleo--elemento-gris"><?php echo $mostrar['name'] ?></p>
+                    <p class="tarjeta-nucleo--elemento-gris">Standard</p>
                   </div>
-
                 </div>
               </div>
             </div>
-            <?php 
-            }
-            ?>
-            
+            <div class="column is-4">
+              <div class="tarjeta-nucleo">
+                <div class="tarjeta-nucleo--encabezado">
+                  <h2 class="tarjeta-nucleo--titulo">Núcleo: 4CV</h2>
+                  <input name="nucleo[]" type="checkbox" value="1">
+                </div>
+                <div class="tarjeta-nucleo--contenido">
+                  <div>
+                    <p class="tarjeta-nucleo--elemento-negro">Peso</p>
+                    <p class="tarjeta-nucleo--elemento-gris">125 gr</p>
+                  </div>
+                  <div>
+                    <p class="tarjeta-nucleo--elemento-negro">Mezcla</p>
+                    <p class="tarjeta-nucleo--elemento-gris">Standard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="tarjeta-nucleo">
+                <div class="tarjeta-nucleo--encabezado">
+                  <h2 class="tarjeta-nucleo--titulo">Núcleo: 6CV</h2>
+                  <input name="nucleo[]" type="checkbox" value="1">
+                </div>
+                <div class="tarjeta-nucleo--contenido">
+                  <div>
+                    <p class="tarjeta-nucleo--elemento-negro">Peso</p>
+                    <p class="tarjeta-nucleo--elemento-gris">125 gr</p>
+                  </div>
+                  <div>
+                    <p class="tarjeta-nucleo--elemento-negro">Mezcla</p>
+                    <p class="tarjeta-nucleo--elemento-gris">Standard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
           

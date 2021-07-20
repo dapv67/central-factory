@@ -54,6 +54,7 @@ footer {
   background-color: darkturquoise;
 }
 
+
 /* Side - Menu */
 
 .side-nav {
@@ -319,16 +320,11 @@ button:hover {
 .login {
   margin: 0 auto;
   width: 400px;
-  padding-top: 4rem;
+  padding: 1rem 0;
 }
-.img {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-.login img {
-  width: 250px;
-  height: 90px;
+.logo-c-factory{
+  width: 360px;
+  height: 360px;
 }
 
 .frmlogin {

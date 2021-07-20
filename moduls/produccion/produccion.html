@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="section">
+      <h1 class="title mb-5">Indicadores de producción</h1>
+      <div class="columns ">
+        <div class="card column is-4">
+          <div class="card-content">
+            <p class="title is-size-4">Productividad</p>
+            <p class="subtitle">Semana</p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item title has-text-success">90 %</p>
+          </footer>
+        </div>
+        <div class="card column is-4">
+          <div class="card-content">
+            <p class="title is-size-4">Productividad</p>
+            <p class="subtitle">Mes</p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item title has-text-danger">60 %</p>
+          </footer>
+        </div>
+        <div class="card column is-4">
+          <div class="card-content">
+            <p class="title is-size-4">Merma</p>
+            <p class="subtitle">Mes</p>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item title has-text-success">6 %</p>
+          </footer>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="encabezado-tablas">
+        <h1 class="title m-0">Historial de producción</h1>
+        <button class="button is-success" id="formAddProduccion">
+          <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          Agregar
+        </button>
+      </div>
+      <div class="container is-full">
+        <table id="example" class="table is-striped" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Orden de pedido</th>
+              <th>Núcleo</th>
+              <th>Cantidad</th>
+              <th>Turno</th>
+              <th>Operador</th>
+              <th>Observaciones</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td>10/ENE/2021</td>
+              <td>1234567890</td>
+              <td>3CV</td>
+              <td>1,500</td>
+              <td>Matutino</td>
+              <td>José López</td>
+              <td>Falla en la inyectora</td>
+
+              <td class="accion">
+                <span class="icon" id="openSeeModal">
+                  <img
+                    src="./img/ic_eye_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <span class="icon" id="openUpdateModal">
+                  <img
+                    src="./img/ic_edit_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <span class="icon" id="openDeleteModal">
+                  <img
+                    src="./img/ic_delete_24px.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+              </td>
+            </tr>
+          
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Fecha</th>
+              <th>Orden de pedido</th>
+              <th>Núcleo</th>
+              <th>Cantidad</th>
+              <th>Turno</th>
+              <th>Operador</th>
+              <th>Observaciones</th>
+              <th>Acción</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <section class="section">
+      <div class="encabezado-tablas">
+        <h1 class="title m-0">Pedidos planeados de la semana</h1>
+        <!-- <button class="btn btn-add">Agregar</button> -->
+        <button class="button is-success" id="formAddPlaneacion">
+          <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          Agregar
+        </button>
+      </div>
+      <div class="container is-full">
+        <table id="example2" class="table is-striped" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Orden de pedido</th>
+              <th>Cliente</th>
+              <th>Núcleo</th>
+              <th>Cantidad</th>
+              <th>Fecha requerida</th>
+              <th>Estatus</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr>
+              <td>1234567890</td>
+              <td>Surtek</td>
+              <td>3CV</td>
+              <td>150</td>
+              <td>12/03/2021</td>
+              <td class="estatus">
+                <span class="icon" id="openSeeModal">
+                  <img
+                    src="./img/semaforo_produccion.svg"
+                    alt="An example icon"
+                    style="width: 24px; height: 24px"
+                  />
+                </span>
+                <p>Producción</p>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Orden de pedido</th>
+              <th>Cliente</th>
+              <th>Núcleo</th>
+              <th>Cantidad</th>
+              <th>Fecha requerida</th>
+              <th>Estatus</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <div class="section contenedor-grafica">
+      <canvas class="grafica" id="myChart" ></canvas>  
+    </div>
+    
+    <!-- addProduccionModal -->
+    <div id="produccionModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Agregar producción</p>
+          <button class="delete close-modal" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body p-2">
+          <!-- Content ... -->
+          <form action="" id="frmproduccion" method="POST">   
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Fecha</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="date"
+                      placeholder="e.g. 01/01/2021"
+                      name="fecha"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Orden de pedido</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="e.g. 214112325"
+                      name="orden"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Turno</label>
+                  <div class="control">
+                    <div class="select w-100">
+                      <select class="w-100" name="turno[]">
+                        <option selected>Seleccione una opción</option>
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Noche">Noche</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Operador</label>
+                  <div class="control">
+                    <div class="select w-100">
+                      <select class="w-100" name="operador[]">
+                        <option selected>Seleccione una opción</option>
+                        <option value="José">José</option>
+                        <option value="Juan">Juan</option>
+                        <option value="Memo">Memo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Mezcla entregada</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 3000 gr"
+                      name="mezclaEntregada"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Mezcla en tolva</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 5 kg"
+                      name="mezclaTolva"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Núcleos en espera</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 50"
+                      name="nucleosEspera"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Núcleos dejados</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 50"
+                      name="nucleosDejados"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Núcleos producidos</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 1000"
+                      name="produccion"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Costales producidos</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 30"
+                      name="costales"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">           
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Kg de merma</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="number"
+                      placeholder="e.g. 30gr"
+                      name="merma"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">           
+              <div class="column is-12">
+                <div class="field">
+                  <label class="label">Observaciones</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="e.g. 30gr"
+                      name="observaciones"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button class="button is-success btn-modal" id="addProduccion">Agregar</button>
+        
+          </form>
+        </section>
+        
+      </div>
+    </div>
+    <!-- addPlaneacionModal -->
+    <div id="planeacionModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Agregar planeación de producción semanal</p>
+          <button class="delete close-modal" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body p-2">
+          <!-- Content ... -->
+          <form action="" id="frmplaneacion" method="POST">
+            <div class="columns carta mb-3"> 
+              <div class="column is-12">
+                <div class="tarjeta-nucleo">
+                  <div class="tarjeta-nucleo--encabezado">
+                    <h2 class="tarjeta-nucleo--titulo">Pedido: #21311422</h2>
+
+                    <input name="orden" type="checkbox"  value="21311422">
+                    
+                  </div>
+                  <h2 class="tarjeta-nucleo--titulo">Núcleo: 3CV</h2>
+                  <div class="tarjeta-nucleo--contenido">
+                    <div>
+                      <p class="tarjeta-nucleo--elemento-negro">Cliente</p>
+                      <p class="tarjeta-nucleo--elemento-gris">Surtek</p>
+                    </div>
+                    <div>
+                      <p class="tarjeta-nucleo--elemento-negro">Cantidad</p>
+                      <p class="tarjeta-nucleo--elemento-gris">1,500 núcleos</p>
+                    </div>
+                    <div>
+                      <p class="tarjeta-nucleo--elemento-negro">Fecha requerida</p>
+                      <p class="tarjeta-nucleo--elemento-gris">21/01/2021</p>
+                    </div>
+                    <div>
+                      <p class="tarjeta-nucleo--elemento-negro">Estatus</p>
+                      <p class="tarjeta-nucleo--elemento-gris">Producción</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+
+
+            <button class="button is-success btn-modal" id="addPlaneacion">Agregar</button>
+
+          </form>
+        </section>
+
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#example").DataTable();
+        $("#example2").DataTable();
+
+        //Abrimos modal para agregar tapón
+        $("#formAddPlaneacion").click(function () {
+          $("#planeacionModal").addClass("is-active");
+        });
+        //Abrimos modal para agregar tapón
+        $("#formAddProduccion").click(function () {
+          $("#produccionModal").addClass("is-active");
+        });
+        //Cerramos modal
+        $(".close-modal").click(function () {
+          $(".modal").removeClass("is-active");
+        });
+      });
+    </script>
+    <script>
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+           type: "bar",
+          //type: "horizontalBar",
+          data: {
+            labels: ["Pronal", "Atenquique", "Rotten"],
+            
+            datasets: [
+              {
+                label: "Meta",
+                backgroundColor: "rgba(51, 133, 255,0.5)",
+                borderColor: "blue",
+                borderWidth: 3,
+                data: [15000, 7000,6789],
+                
+              },
+              {
+                label: "Producido",
+                backgroundColor: "rgb(75, 192, 192)",
+                borderColor: "green",
+                borderWidth: 3,
+                data: [7000, 7000,3429],
+                
+              },
+              
+            ],
+          },
+          options: {
+            // Elements options apply to all of the options unless overridden in a dataset
+            // In this case, we are setting the border of each horizontal bar to be 2px wide
+            elements: {
+              rectangle: {
+                borderWidth: 2,
+                boxWidth: 30,
+              },
+            },
+            responsive: true,
+            legend: {
+              position: "top",
+              display: true,
+              labels: {
+                boxWidth: 30,
+                fontColor: "black",
+                fontSize:15,
+              },
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          },
+        });
+      </script>
+  </body>
+</html>
