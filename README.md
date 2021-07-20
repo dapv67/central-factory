@@ -1,5 +1,7 @@
-# wolfplast
-Sistema web responsive útil para controlar la operación de una fabrica.  
-+ La producción 
-+ Los niveles de inventario 
-+ Los pedidos y envíos a los clientes
+# central-factory
+
+Software que ayuda a controlar los procesos de una fabrica:
++Producción
++Pedidos y envíos
++Almacén
++Clientes
