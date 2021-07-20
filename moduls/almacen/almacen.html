@@ -11,20 +11,24 @@
       <div class="encabezado-tablas">
         <h1 class="title m-0">Almacen</h1>
         <div class="btns-almacen">
-          <button class="button is-link" id="openAddModal" data-target="#modal">
-            <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          <button
+            class="button is-link"
+            id="addArticuloModal"
+            data-target="#modal"
+          >
+            <img src="./img/plus.svg" alt="icon" class="mr-2" />
             Agregar
           </button>
           <button
             class="button is-success"
-            id="openEntradaModal"
+            id="addEntradaModal"
             data-target="#modal"
           >
             Entrada
           </button>
           <button
             class="button is-danger"
-            id="openSalidaModal"
+            id="addSalidaModal"
             data-target="#modal"
           >
             Salida
@@ -34,60 +38,48 @@
       <div class="columns mt-3">
         <div class="column is-3 tarjeta">
           <div class="part-1">
-            <p class="dinero">
-              $ 120,000
-            </p>
-            <p class="texto ">Total en materias primas</p>
+            <p class="dinero">$ 120,000</p>
+            <p class="texto">Total en materias primas</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="column is-3 tarjeta">
           <div class="part-1">
-            <p class="dinero">
-              $ 120,000
-            </p>
-            <p class="texto ">Total en insumos</p>
+            <p class="dinero">$ 120,000</p>
+            <p class="texto">Total en insumos</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="column is-3 tarjeta">
           <div class="part-1">
-            <p class="dinero">
-              $ 120,000
-            </p>
-            <p class="texto ">Total en núcleos </p>
+            <p class="dinero">$ 120,000</p>
+            <p class="texto">Total en núcleos</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="column is-3 tarjeta">
           <div class="part-1">
-            <p class="dinero is-negro">
-              $ 820,000
-            </p>
-            <p class="texto ">Total</p>
+            <p class="dinero is-negro">$ 820,000</p>
+            <p class="texto">Total</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
-        
       </div>
       <div class="mb-6 mt-5">
         <h2 class="subtitle">Materias primas: Comprada & Procesada</h2>
         <div class="carta">
-        
           <div class="card wrapper-carta">
             <header class="card-header">
               <p class="card-header-title">Solbent</p>
-              <p class="dinero ">
-                $50,000
-              </p>
+              <p class="dinero">$50,000</p>
             </header>
             <div class="card-content">
               <div class="content">
@@ -96,31 +88,33 @@
                   500 kg
                 </p>
                 <p class="">Procesada</p>
-                <p class="card-footer-item title gris is-size-5">
-                  300 kg
-                </p>
+                <p class="card-footer-item title gris is-size-5">300 kg</p>
               </div>
-              
             </div>
             <footer class="card-footer">
-              <a href="#" class="card-footer-item" onclick="updateMateriaModal()">Editar</a>
-              <a href="#" class="card-footer-item" onclick="eliminarArticulo('1','Item 2','1')">Eliminar</a>
+              <a
+                href="#"
+                class="card-footer-item"
+                onclick="updateMateriaModal()"
+                >Editar</a
+              >
+              <a
+                href="#"
+                class="card-footer-item"
+                onclick="eliminarArticulo('1','Item 2','1')"
+                >Eliminar</a
+              >
             </footer>
           </div>
-         
         </div>
-        
       </div>
       <div class="mb-6">
         <h2 class="subtitle">Núcleos de plástico</h2>
         <div class="carta">
-        
           <div class="card wrapper-carta">
             <header class="card-header">
               <p class="card-header-title">4CV</p>
-              <p class="dinero ">
-                $201,000
-              </p>
+              <p class="dinero">$201,000</p>
             </header>
             <div class="card-content">
               <div class="content">
@@ -130,15 +124,22 @@
               </div>
             </div>
             <footer class="card-footer">
-              <a href="#" class="card-footer-item" onclick="updateTaponModal()">Editar</a>
-              <a href="#" class="card-footer-item" onclick="eliminarArticulo('2','3CV','3')">Eliminar</a>
+              <a href="#" class="card-footer-item" onclick="updateTaponModal()"
+                >Editar</a
+              >
+              <a
+                href="#"
+                class="card-footer-item"
+                onclick="eliminarArticulo('2','3CV','3')"
+                >Eliminar</a
+              >
             </footer>
           </div>
 
           <div class="card wrapper-carta">
             <header class="card-header">
               <p class="card-header-title">3CP</p>
-              <p class="dinero ">$1,000.00</p>
+              <p class="dinero">$1,000.00</p>
             </header>
             <div class="card-content">
               <div class="content">
@@ -148,12 +149,10 @@
               </div>
             </div>
             <footer class="card-footer">
-  
               <a href="#" class="card-footer-item">Edit</a>
               <a href="#" class="card-footer-item">Delete</a>
             </footer>
           </div>
-          
         </div>
       </div>
     </section>
@@ -169,12 +168,10 @@
               <th>Acción</th>
             </tr>
           </thead>
-          <tbody> 
+          <tbody>
             <tr>
               <td>Hoy</td>
-              <td>
-                Standard I
-              </td>
+              <td>Standard I</td>
               <td>
                 <p class="has-text-success has-text-weight-bold">120 kg</p>
               </td>
@@ -203,11 +200,9 @@
                 </span>
               </td>
             </tr>
-             <tr>
+            <tr>
               <td>Hoy</td>
-              <td>
-                Gas
-              </td>
+              <td>Gas</td>
               <td>
                 <p class="has-text-danger has-text-weight-bold">120 kg</p>
               </td>
@@ -236,7 +231,6 @@
                 </span>
               </td>
             </tr>
-            
           </tbody>
           <tfoot>
             <th>Fecha</th>
@@ -253,7 +247,7 @@
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Agregar Materia Prima</p>
-          
+
           <button class="delete close-modal" aria-label="close"></button>
         </header>
         <section class="modal-card-body p-2">
@@ -288,7 +282,7 @@
                 </div>
               </div>
             </div>
-            <div class="columns">          
+            <div class="columns">
               <div class="column is-6">
                 <div class="field">
                   <label class="label">Punto de reorden</label>
@@ -327,7 +321,7 @@
                     />
                   </div>
                 </div>
-              </div>          
+              </div>
             </div>
             <div class="columns">
               <div class="column is-6">
@@ -344,12 +338,12 @@
                 </div>
               </div>
             </div>
-            
-          <button  class="button is-azul btn-modal" id="addMateria">Agregar</button>
-        
+
+            <button class="button is-azul btn-modal" id="addMateria">
+              Agregar
+            </button>
           </form>
         </section>
-        
       </div>
     </div>
     <!-- entradaMateriaModal -->
@@ -358,7 +352,7 @@
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Entrada: Compra de materia prima</p>
-          
+
           <button class="delete close-modal" aria-label="close"></button>
         </header>
         <section class="modal-card-body p-2">
@@ -373,8 +367,8 @@
                     <div class="select w-100">
                       <select class="w-100" name="materia[]">
                         <option disabled selected>Seleccione una opción</option>
-                       <option value="1">Standard</option>;
-                         
+                        <option value="1">Standard</option>
+                        ;
                       </select>
                     </div>
                   </div>
@@ -396,7 +390,7 @@
                 </div>
               </div>
             </div>
-            <div class="columns">          
+            <div class="columns">
               <div class="column is-6">
                 <div class="field">
                   <label class="label">Cantidad</label>
@@ -422,12 +416,16 @@
                     />
                   </div>
                 </div>
-              </div>          
+              </div>
             </div>
-          <button  class="button is-success btn-modal" id="entradaMateriaPrima">Agregar</button>
+            <button
+              class="button is-success btn-modal"
+              id="entradaMateriaPrima"
+            >
+              Agregar
+            </button>
           </form>
         </section>
-        
       </div>
     </div>
     <!-- salidaModal -->
@@ -436,7 +434,7 @@
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Sálida de Rafia</p>
-          
+
           <button class="delete close-modal" aria-label="close"></button>
         </header>
         <section class="modal-card-body p-2">
@@ -469,58 +467,23 @@
                     />
                   </div>
                 </div>
-              </div> 
+              </div>
             </div>
-            
-          <button  class="button is-danger btn-modal" id="salidaRafia">Agregar</button>
-        
+
+            <button class="button is-danger btn-modal" id="salidaRafia">
+              Agregar
+            </button>
           </form>
         </section>
-        
       </div>
     </div>
- 
+
     <script>
-      //Eliminamos registro del artículo
-      function eliminarArticulo(id,nombre,clasificacionArticulo) {
-        $("#eliminarArticuloModal").addClass("is-active");
-        $('#idE').val(id);
-        $('#clasificacionArticulo').val(clasificacionArticulo);
-        $('#nombre_articulo').text(nombre);
-      }
-      function updateInsumoModal() {    
-        $("#updateInsumoModal").addClass("is-active");    
-      }
-      function updateTaponModal() {
-        $("#updateTaponModal").addClass("is-active");
-      }
-      function updateMateriaModal(array) {
-        $("#updateMateriaModal").addClass("is-active");
-      }
-      $(document).ready(function () {
-        $("#example").DataTable();
-        $("#example2").DataTable();
-        $("#example3").DataTable();
-        $("#example4").DataTable();
-      });
-      //Almacen
-      //Abrimos modal para agregar articulo
-      $("#openAddModal").click(function () {
-        $("#materiaModal").addClass("is-active");
-      });
-      //Abrimos modal para agregar entrada
-      $("#openEntradaModal").click(function () {
-        $("#entradaMPModal").addClass("is-active");
-      });
-      //Abrimos modal para agregar salida
-      $("#openSalidaModal").click(function () {
-        $("#salidaRafiaModal").addClass("is-active");
-      });
-      //Cerramos modal
-      $(".close-modal").click(function () {
-        $(".modal").removeClass("is-active");
-      });
-      
+      $("#example").DataTable();
+      $("#example2").DataTable();
+      $("#example3").DataTable();
+      $("#example4").DataTable();
     </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

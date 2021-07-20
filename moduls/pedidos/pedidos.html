@@ -8,17 +8,19 @@
   </head>
   <body>
     <section class="section pb-4">
-      <h1 class="title m-0">Materias primas necesarias para los pedidos programados</h1>
+      <h1 class="title m-0">
+        Materias primas necesarias para los pedidos programados
+      </h1>
       <div class="tablero">
         <div class="tarjeta-mat-prima">
           <div class="part-1">
             <div class="pseudoelemento"></div>
             <p class="name-card">Multicolor</p>
             <p class="kg-card">500 kg</p>
-            <p class="dinero ">$5,000</p>
+            <p class="dinero">$5,000</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="tarjeta-mat-prima">
@@ -26,10 +28,10 @@
             <div class="pseudoelemento"></div>
             <p class="name-card">Electrolit</p>
             <p class="kg-card">500 kg</p>
-            <p class="dinero ">$5,000</p>
+            <p class="dinero">$5,000</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="tarjeta-mat-prima">
@@ -37,10 +39,10 @@
             <div class="pseudoelemento"></div>
             <p class="name-card">Duro</p>
             <p class="kg-card">500 kg</p>
-            <p class="dinero ">$5,000</p>
+            <p class="dinero">$5,000</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="tarjeta-mat-prima">
@@ -48,10 +50,10 @@
             <div class="pseudoelemento"></div>
             <p class="name-card">Merma</p>
             <p class="kg-card">500 kg</p>
-            <p class="dinero ">$5,000</p>
+            <p class="dinero">$5,000</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
         <div class="tarjeta-mat-prima">
@@ -59,10 +61,10 @@
             <div class="pseudoelemento"></div>
             <p class="name-card">Lechero</p>
             <p class="kg-card">500 kg</p>
-            <p class="dinero ">$5,000</p>
+            <p class="dinero">$5,000</p>
           </div>
           <div class="part-2">
-            <img src="./img/grafica.svg" alt="">
+            <img src="./img/grafica.svg" alt="" />
           </div>
         </div>
       </div>
@@ -71,11 +73,10 @@
       <div class="encabezado-tablas">
         <h1 class="title m-0">Pedidos</h1>
         <div>
-          <button class="button is-success" id="openAddModal">
-            <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          <button class="button is-success" id="addPedidoModal">
+            <img src="./img/plus.svg" alt="icon" class="mr-2" />
             Agregar
           </button>
-        
         </div>
       </div>
       <div class="container is-full">
@@ -94,7 +95,6 @@
             </tr>
           </thead>
           <tbody>
-           
             <tr>
               <td>1234567890</td>
               <td>Surtek</td>
@@ -103,7 +103,6 @@
               <td>21/01/2021</td>
               <td class="estatus">
                 <span class="icon" id="openSeeModal">
-                  
                   <img
                     src="./img/semaforo_produccion.svg"
                     alt="An example icon"
@@ -115,7 +114,6 @@
               <td>-</td>
               <td>21/01/2021</td>
               <td class="accion">
-                
                 <span class="icon" id="openUpdateModal">
                   <img
                     src="./img/ic_edit_24px.svg"
@@ -132,7 +130,7 @@
                 </span>
               </td>
             </tr>
-            
+
             <tr>
               <td>Pronal</td>
               <td>2345356</td>
@@ -152,7 +150,6 @@
               <td class="has-text-danger">6 días</td>
               <td>-</td>
               <td class="accion">
-                
                 <span class="icon" id="openUpdateModal">
                   <img
                     src="./img/ic_edit_24px.svg"
@@ -190,20 +187,20 @@
       <div class="encabezado-tablas">
         <div class="encabezado-estatus">
           <h1 class="title m-0">Pedidos en ruta</h1>
-            <img
-              src="./img/semaforo_ruta.svg"
-              alt="An example icon"
-              style="width: 25px; height: 25px"
-            />
+          <img
+            src="./img/semaforo_ruta.svg"
+            alt="An example icon"
+            style="width: 25px; height: 25px"
+          />
         </div>
         <div>
-          <button class="button is-link" id="openEnvioModal">
-            <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          <button class="button is-link" id="addEnvioModal">
+            <img src="./img/plus.svg" alt="icon" class="mr-2" />
             Envío
           </button>
         </div>
       </div>
-      
+
       <div class="container is-full">
         <table id="example2" class="table is-striped" style="width: 100%">
           <thead>
@@ -224,7 +221,7 @@
               <td>2,000</td>
               <td>Hoy</td>
               <td class="accion">
-                <span class="icon" id="" >
+                <span class="icon" id="">
                   <img
                     class="updateEstatusEnvio"
                     src="./img/ic_edit_24px.svg"
@@ -234,7 +231,7 @@
                 </span>
                 <p>En camino</p>
               </td>
-            </tr>         
+            </tr>
           </tbody>
           <tfoot>
             <tr>
@@ -293,15 +290,21 @@
                 <div class="field">
                   <label class="label">Fecha de envío</label>
                   <div class="control">
-                    <input class="input" type="date" placeholder="Text input" name="fecha"/>
+                    <input
+                      class="input"
+                      type="date"
+                      placeholder="Text input"
+                      name="fecha"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <button class="button is-success btn-modal" id="addEnvio">Agregar</button>
+            <button class="button is-success btn-modal" id="addEnvio">
+              Agregar
+            </button>
           </form>
         </section>
-       
       </div>
     </div>
     <!-- addPedidoModal -->
@@ -323,10 +326,9 @@
                   <div class="control">
                     <div class="select w-100">
                       <select class="w-100" name="cliente[]">
-                        <option disabled selected>Seleccione una opción</option>                     
-                            <option value="5">Surtek</option>;
-                          
-                        
+                        <option disabled selected>Seleccione una opción</option>
+                        <option value="5">Surtek</option>
+                        ;
                       </select>
                     </div>
                   </div>
@@ -339,9 +341,9 @@
                     <div class="select w-100">
                       <select class="w-100" name="tapon[]">
                         <option disabled selected>Seleccione una opción</option>
- 
-                            <option value="7">3CV</option>;
-                    
+
+                        <option value="7">3CV</option>
+                        ;
                       </select>
                     </div>
                   </div>
@@ -366,7 +368,12 @@
                 <div class="field">
                   <label class="label">Fecha requerida</label>
                   <div class="control">
-                    <input class="input" type="date" placeholder="Text input" name="fecha"/>
+                    <input
+                      class="input"
+                      type="date"
+                      placeholder="Text input"
+                      name="fecha"
+                    />
                   </div>
                 </div>
               </div>
@@ -376,15 +383,21 @@
                 <div class="field">
                   <label class="label">Orden de compra</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Text input" name="ordenCompra"/>
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Text input"
+                      name="ordenCompra"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <button class="button is-success btn-modal" id="addPedido">Agregar</button>
+            <button class="button is-success btn-modal" id="addPedido">
+              Agregar
+            </button>
           </form>
         </section>
-       
       </div>
     </div>
     <!-- updateEnvioModal -->
@@ -398,7 +411,13 @@
         <section class="modal-card-body p-2">
           <!-- Content ... -->
           <form id="frmupdateenvio" method="POST" action="">
-            <input class="input" type="text" name="id" id="id_envio" style="display:none"/>
+            <input
+              class="input"
+              type="text"
+              name="id"
+              id="id_envio"
+              style="display: none"
+            />
             <div class="columns">
               <div class="column is-12">
                 <div class="field">
@@ -410,7 +429,9 @@
                         <option value="Planta GDL">Planta GDL</option>
                         <option value="Salió de GDL">Salió de GDL</option>
                         <option value="Planta Ext.">Planta Ext.</option>
-                        <option value="Salió a domicilio">Salió a domicilio</option>
+                        <option value="Salió a domicilio">
+                          Salió a domicilio
+                        </option>
                         <option value="Entregado">Entregado</option>
                       </select>
                     </div>
@@ -418,40 +439,19 @@
                 </div>
               </div>
             </div>
-            
-            <button class="button is-success btn-modal" id="updateEnvio">Actualizar</button>
+
+            <button class="button is-success btn-modal" id="updateEnvio">
+              Actualizar
+            </button>
           </form>
         </section>
-       
       </div>
     </div>
     <script>
- 
-      $(document).ready(function () {
-        $("#example").DataTable();
-        $("#example2").DataTable();
-        $("#example3").DataTable();
-     
-        $("#openAddModal").click(function () {
-          $("#addPedidoModal").addClass("is-active");
-         
-        });
-        $("#openEnvioModal").click(function () {
-          $("#envioModal").addClass("is-active");
-          
-        });
-        $(".updateEstatusEnvio").click(function () {
-          $("#actualizarEstatusEnvioModal").addClass("is-active");
-          
-        });
-        //Cerramos modal
-        $(".close-modal").click(function () {
-          $(".modal").removeClass("is-active");
-        });
-              
-      });
-      
-
+      $("#example").DataTable();
+      $("#example2").DataTable();
+      $("#example3").DataTable();
     </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

@@ -9,7 +9,7 @@
   <body>
     <section class="section">
       <h1 class="title mb-5">Indicadores de producción</h1>
-      <div class="columns ">
+      <div class="columns">
         <div class="card column is-4">
           <div class="card-content">
             <p class="title is-size-4">Productividad</p>
@@ -43,7 +43,7 @@
       <div class="encabezado-tablas">
         <h1 class="title m-0">Historial de producción</h1>
         <button class="button is-success" id="formAddProduccion">
-          <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          <img src="./img/plus.svg" alt="icon" class="mr-2" />
           Agregar
         </button>
       </div>
@@ -62,7 +62,6 @@
             </tr>
           </thead>
           <tbody>
-            
             <tr>
               <td>10/ENE/2021</td>
               <td>1234567890</td>
@@ -96,7 +95,6 @@
                 </span>
               </td>
             </tr>
-          
           </tbody>
           <tfoot>
             <tr>
@@ -116,9 +114,8 @@
     <section class="section">
       <div class="encabezado-tablas">
         <h1 class="title m-0">Pedidos planeados de la semana</h1>
-        <!-- <button class="btn btn-add">Agregar</button> -->
         <button class="button is-success" id="formAddPlaneacion">
-          <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          <img src="./img/plus.svg" alt="icon" class="mr-2" />
           Agregar
         </button>
       </div>
@@ -135,7 +132,6 @@
             </tr>
           </thead>
           <tbody>
-          
             <tr>
               <td>1234567890</td>
               <td>Surtek</td>
@@ -168,9 +164,9 @@
       </div>
     </section>
     <div class="section contenedor-grafica">
-      <canvas class="grafica" id="myChart" ></canvas>  
+      <canvas class="grafica" id="myChart"></canvas>
     </div>
-    
+
     <!-- addProduccionModal -->
     <div id="produccionModal" class="modal">
       <div class="modal-background"></div>
@@ -181,7 +177,7 @@
         </header>
         <section class="modal-card-body p-2">
           <!-- Content ... -->
-          <form action="" id="frmproduccion" method="POST">   
+          <form action="" id="frmproduccion" method="POST">
             <div class="columns">
               <div class="column is-6">
                 <div class="field">
@@ -326,7 +322,7 @@
                 </div>
               </div>
             </div>
-            <div class="columns">           
+            <div class="columns">
               <div class="column is-6">
                 <div class="field">
                   <label class="label">Kg de merma</label>
@@ -341,7 +337,7 @@
                 </div>
               </div>
             </div>
-            <div class="columns">           
+            <div class="columns">
               <div class="column is-12">
                 <div class="field">
                   <label class="label">Observaciones</label>
@@ -356,12 +352,12 @@
                 </div>
               </div>
             </div>
-            
-            <button class="button is-success btn-modal" id="addProduccion">Agregar</button>
-        
+
+            <button class="button is-success btn-modal" id="addProduccion">
+              Agregar
+            </button>
           </form>
         </section>
-        
       </div>
     </div>
     <!-- addPlaneacionModal -->
@@ -369,20 +365,21 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Agregar planeación de producción semanal</p>
+          <p class="modal-card-title">
+            Agregar planeación de producción semanal
+          </p>
           <button class="delete close-modal" aria-label="close"></button>
         </header>
         <section class="modal-card-body p-2">
           <!-- Content ... -->
           <form action="" id="frmplaneacion" method="POST">
-            <div class="columns carta mb-3"> 
+            <div class="columns carta mb-3">
               <div class="column is-12">
                 <div class="tarjeta-nucleo">
                   <div class="tarjeta-nucleo--encabezado">
                     <h2 class="tarjeta-nucleo--titulo">Pedido: #21311422</h2>
 
-                    <input name="orden" type="checkbox"  value="21311422">
-                    
+                    <input name="orden" type="checkbox" value="21311422" />
                   </div>
                   <h2 class="tarjeta-nucleo--titulo">Núcleo: 3CV</h2>
                   <div class="tarjeta-nucleo--contenido">
@@ -395,7 +392,9 @@
                       <p class="tarjeta-nucleo--elemento-gris">1,500 núcleos</p>
                     </div>
                     <div>
-                      <p class="tarjeta-nucleo--elemento-negro">Fecha requerida</p>
+                      <p class="tarjeta-nucleo--elemento-negro">
+                        Fecha requerida
+                      </p>
                       <p class="tarjeta-nucleo--elemento-gris">21/01/2021</p>
                     </div>
                     <div>
@@ -405,94 +404,74 @@
                   </div>
                 </div>
               </div>
-              
             </div>
 
-
-            <button class="button is-success btn-modal" id="addPlaneacion">Agregar</button>
-
+            <button class="button is-success btn-modal" id="addPlaneacion">
+              Agregar
+            </button>
           </form>
         </section>
-
       </div>
     </div>
     <script>
-      $(document).ready(function () {
-        $("#example").DataTable();
-        $("#example2").DataTable();
+      $("#example").DataTable();
+      $("#example2").DataTable();
 
-        //Abrimos modal para agregar tapón
-        $("#formAddPlaneacion").click(function () {
-          $("#planeacionModal").addClass("is-active");
-        });
-        //Abrimos modal para agregar tapón
-        $("#formAddProduccion").click(function () {
-          $("#produccionModal").addClass("is-active");
-        });
-        //Cerramos modal
-        $(".close-modal").click(function () {
-          $(".modal").removeClass("is-active");
-        });
-      });
-    </script>
-    <script>
-        var ctx = document.getElementById("myChart");
-        var myChart = new Chart(ctx, {
-           type: "bar",
-          //type: "horizontalBar",
-          data: {
-            labels: ["Pronal", "Atenquique", "Rotten"],
-            
-            datasets: [
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        //type: "horizontalBar",
+        data: {
+          labels: ["Pronal", "Atenquique", "Rotten"],
+
+          datasets: [
+            {
+              label: "Meta",
+              backgroundColor: "rgba(51, 133, 255,0.5)",
+              borderColor: "blue",
+              borderWidth: 3,
+              data: [15000, 7000, 6789],
+            },
+            {
+              label: "Producido",
+              backgroundColor: "rgb(75, 192, 192)",
+              borderColor: "green",
+              borderWidth: 3,
+              data: [7000, 7000, 3429],
+            },
+          ],
+        },
+        options: {
+          // Elements options apply to all of the options unless overridden in a dataset
+          // In this case, we are setting the border of each horizontal bar to be 2px wide
+          elements: {
+            rectangle: {
+              borderWidth: 2,
+              boxWidth: 30,
+            },
+          },
+          responsive: true,
+          legend: {
+            position: "top",
+            display: true,
+            labels: {
+              boxWidth: 30,
+              fontColor: "black",
+              fontSize: 15,
+            },
+          },
+          scales: {
+            yAxes: [
               {
-                label: "Meta",
-                backgroundColor: "rgba(51, 133, 255,0.5)",
-                borderColor: "blue",
-                borderWidth: 3,
-                data: [15000, 7000,6789],
-                
+                ticks: {
+                  beginAtZero: true,
+                },
               },
-              {
-                label: "Producido",
-                backgroundColor: "rgb(75, 192, 192)",
-                borderColor: "green",
-                borderWidth: 3,
-                data: [7000, 7000,3429],
-                
-              },
-              
             ],
           },
-          options: {
-            // Elements options apply to all of the options unless overridden in a dataset
-            // In this case, we are setting the border of each horizontal bar to be 2px wide
-            elements: {
-              rectangle: {
-                borderWidth: 2,
-                boxWidth: 30,
-              },
-            },
-            responsive: true,
-            legend: {
-              position: "top",
-              display: true,
-              labels: {
-                boxWidth: 30,
-                fontColor: "black",
-                fontSize:15,
-              },
-            },
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true,
-                  },
-                },
-              ],
-            },
-          },
-        });
-      </script>
+        },
+      });
+    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

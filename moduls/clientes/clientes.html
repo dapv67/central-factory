@@ -12,10 +12,9 @@
         <h1 class="title">Clientes</h1>
         <!-- <button class="btn btn-add">Agregar</button> -->
         <button class="button is-success" id="formAddCliente">
-          <img src="./img/plus.svg" alt="icon" class="mr-2"/>
+          <img src="./img/plus.svg" alt="icon" class="mr-2" />
           Agregar
         </button>
-        
       </div>
       <div class="container is-full">
         <table id="example" class="table is-striped" style="width: 100%">
@@ -32,7 +31,6 @@
             </tr>
           </thead>
           <tbody>
-      
             <tr>
               <td>Surtek</td>
               <td>José Pérez</td>
@@ -41,22 +39,23 @@
               <td>2342123487</td>
               <td>AAA</td>
               <td>
-                  <img
-                    src="./img/semaforo_entregado.svg"
-                    alt="An example icon"
-                    style="width: 24px; height: 24px"
-                  />
+                <img
+                  src="./img/semaforo_entregado.svg"
+                  alt="An example icon"
+                  style="width: 24px; height: 24px"
+                />
                 15,000
-                
               </td>
-              
+
               <td class="accion">
-                <button class="openUpdateModal btn-azul" value="">Modificar</button>
-                <button class="btn-rojo" onclick="eliminarCliente('10','Jose')">Eliminar</button>
-             
+                <button class="updateClienteModal btn-azul" value="">
+                  Modificar
+                </button>
+                <button class="btn-rojo" onclick="eliminarCliente('10','Jose')">
+                  Eliminar
+                </button>
               </td>
             </tr>
-            
           </tbody>
           <tfoot>
             <tr>
@@ -73,27 +72,36 @@
         </table>
       </div>
     </section>
-     <!-- deleteClienteModal -->
+    <!-- deleteClienteModal -->
     <div id="eliminarClienteModal" class="modal">
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Eliminar Cliente</p>
-          
+
           <button class="delete close-modal" aria-label="close"></button>
         </header>
         <section class="modal-card-body p-2">
           <!-- Content ... -->
           <form action="" id="frmeliminarcliente" method="POST">
-            <input class="input" type="text" name="id" id="id_cli" style="display:none"/>
+            <input
+              class="input"
+              type="text"
+              name="id"
+              id="id_cli"
+              style="display: none"
+            />
             <!-- <input class="input" type="text" id="nombre" style="display:none"/> -->
-            <h1 class="is-size-5 mb-3">Esta seguro que desea eliminar el registro del cliente <span id="nom_cli"></span> ?</h1>
-            
-          <button  class="button is-danger btn-modal" id="eliminarCliente">Eliminar</button>
-        
+            <h1 class="is-size-5 mb-3">
+              Esta seguro que desea eliminar el registro del cliente
+              <span id="nom_cli"></span> ?
+            </h1>
+
+            <button class="button is-danger btn-modal" id="eliminarCliente">
+              Eliminar
+            </button>
           </form>
         </section>
-        
       </div>
     </div>
     <!-- updateClienteModal -->
@@ -107,67 +115,81 @@
         <section class="modal-card-body p-2">
           <!-- Content ... -->
           <form action="" id="frmupdatecliente" method="POST">
-            <input class="input" type="text" name="id" id="id" style="display:none"/>
-            <h1 class="is-size-4 mb-3">Detalles </h1>
+            <input
+              class="input"
+              type="text"
+              name="id"
+              id="id"
+              style="display: none"
+            />
+            <h1 class="is-size-4 mb-3">Detalles</h1>
             <div class="apartado-form">
-              
-              <h1 class="titulo-apartado-form">Núcleos requeridos</h1>     
+              <h1 class="titulo-apartado-form">Núcleos requeridos</h1>
               <div class="columns carta">
-                
                 <div class="column is-6">
                   <div class="tarjeta-nucleo">
-                <div class="tarjeta-nucleo--encabezado">
-                  <h2 class="tarjeta-nucleo--titulo">Núcleo: 3CV</h2>
-                  <input name="nucleo[]" type="checkbox" value="1">
-                </div>
-                <div class="tarjeta-nucleo--contenido">
-                  <div>
-                    <p class="tarjeta-nucleo--elemento-negro">Peso</p>
-                    <p class="tarjeta-nucleo--elemento-gris">125 gr</p>
+                    <div class="tarjeta-nucleo--encabezado">
+                      <h2 class="tarjeta-nucleo--titulo">Núcleo: 3CV</h2>
+                      <input name="nucleo[]" type="checkbox" value="1" />
+                    </div>
+                    <div class="tarjeta-nucleo--contenido">
+                      <div>
+                        <p class="tarjeta-nucleo--elemento-negro">Peso</p>
+                        <p class="tarjeta-nucleo--elemento-gris">125 gr</p>
+                      </div>
+                      <div>
+                        <p class="tarjeta-nucleo--elemento-negro">Mezcla</p>
+                        <p class="tarjeta-nucleo--elemento-gris">Standard</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p class="tarjeta-nucleo--elemento-negro">Mezcla</p>
-                    <p class="tarjeta-nucleo--elemento-gris">Standard</p>
-                  </div>
-
                 </div>
-              </div>
-                </div>
-               
-                
               </div>
             </div>
             <h1 class="titulo-apartado-form">Datos del cliente</h1>
             <div class="columns">
               <div class="column is-6">
-              <div class="field">
-                <label class="label">Código de cliente</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="C-213"  name="codigo" id="codigo"/>
+                <div class="field">
+                  <label class="label">Código de cliente</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="C-213"
+                      name="codigo"
+                      id="codigo"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="column is-6">
-              <div class="field">
-                <label class="label">Nombre</label>
-                <div class="control">
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="José Manriquez"
-                    name="nombre"
-                    id="nombre"                  
-                  />
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Nombre</label>
+                  <div class="control">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="José Manriquez"
+                      name="nombre"
+                      id="nombre"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
             <div class="columns">
               <div class="column is-6">
                 <div class="field">
                   <label class="label">Empresa</label>
                   <div class="control">
-                    <input class="input" id="empresa"   type="text" placeholder="Pronal" name="empresa" id="eid"/>
+                    <input
+                      class="input"
+                      id="empresa"
+                      type="text"
+                      placeholder="Pronal"
+                      name="empresa"
+                      id="eid"
+                    />
                   </div>
                 </div>
               </div>
@@ -178,7 +200,7 @@
                     <input
                       class="input"
                       type="text"
-                      id="grupo"  
+                      id="grupo"
                       placeholder="Jefe de compras"
                       name="grupo"
                     />
@@ -194,14 +216,14 @@
                     <input
                       class="input"
                       type="text"
-                      id="puesto"  
+                      id="puesto"
                       name="puesto"
                       placeholder="Jefe de compras"
                     />
                   </div>
                 </div>
               </div>
-              
+
               <div class="column is-6">
                 <div class="field">
                   <label class="label">Correo</label>
@@ -209,7 +231,7 @@
                     <input
                       class="input"
                       type="email"
-                      id="correo"  
+                      id="correo"
                       name="correo"
                       placeholder="e. g. jose@wolfplast.com"
                     />
@@ -222,7 +244,13 @@
                 <div class="field">
                   <label class="label">Teléfono 1</label>
                   <div class="control">
-                    <input class="input" id="tel1"  name="tel" type="tel" placeholder="Text input" />
+                    <input
+                      class="input"
+                      id="tel1"
+                      name="tel"
+                      type="tel"
+                      placeholder="Text input"
+                    />
                   </div>
                 </div>
               </div>
@@ -230,7 +258,13 @@
                 <div class="field">
                   <label class="label">Teléfono 2</label>
                   <div class="control">
-                    <input class="input" id="tel2"   name="phone" type="tel" placeholder="Text input" />
+                    <input
+                      class="input"
+                      id="tel2"
+                      name="phone"
+                      type="tel"
+                      placeholder="Text input"
+                    />
                   </div>
                 </div>
               </div>
@@ -241,7 +275,11 @@
                   <label class="label">Clasificación</label>
                   <div class="control">
                     <div class="select w-100">
-                      <select class="w-100" name="clasificacion[]" id="clasificacion"  >
+                      <select
+                        class="w-100"
+                        name="clasificacion[]"
+                        id="clasificacion"
+                      >
                         <option selected>Selecciona una opción</option>
                         <option value="AAA">AAA</option>
                         <option value="AA">AA</option>
@@ -255,19 +293,29 @@
                 <div class="field">
                   <label class="label">Días de crédito</label>
                   <div class="control">
-                    <input class="input" id="dcredito"   name="dcredito" type="number" placeholder="e.g. 15 días" />
+                    <input
+                      class="input"
+                      id="dcredito"
+                      name="dcredito"
+                      type="number"
+                      placeholder="e.g. 15 días"
+                    />
                   </div>
                 </div>
               </div>
-             
             </div>
             <div class="columns">
-             
               <div class="column is-6">
                 <div class="field">
                   <label class="label">Utilidad</label>
                   <div class="control">
-                    <input class="input" id="utilidad"   name="utilidad" type="number" placeholder="e.g. 30%" />
+                    <input
+                      class="input"
+                      id="utilidad"
+                      name="utilidad"
+                      type="number"
+                      placeholder="e.g. 30%"
+                    />
                   </div>
                 </div>
               </div>
@@ -275,65 +323,29 @@
                 <div class="field">
                   <label class="label">Consumo mensual</label>
                   <div class="control">
-                    <input class="input" id="consumo"  type="number" name="consumo" placeholder="e.g. 8000 núcleos" />
+                    <input
+                      class="input"
+                      id="consumo"
+                      type="number"
+                      name="consumo"
+                      placeholder="e.g. 8000 núcleos"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            
-          <button  class="button is-success btn-modal" id="updateCliente">Actualizar</button>
-        
+
+            <button class="button is-success btn-modal" id="updateCliente">
+              Actualizar
+            </button>
           </form>
         </section>
-        
       </div>
     </div>
-   
 
     <script>
-  
-      //Eliminamos registro
-      function eliminarCliente(id,nombre) {
-        $("#eliminarClienteModal").addClass("is-active");
-        $('#id_cli').val(id);
-        $('#nom_cli').text(nombre);
-      }
-      $(document).ready(function () {
-        $("#example").DataTable();
-
-        //CLIENTES
-        //Abrimos form para agregar cliente
-        $("#formAddCliente").click(function () {
-          $(".contenido").load("./moduls/clientes/formAddCliente.html");
-        });
-        //Cerramos modal
-        $(".close-modal").click(function () {
-          $(".modal").removeClass("is-active");
-        });
-        //Pasamos el registro al form actualizar
-        $(".openUpdateModal").click(function () {
-          var array=$(this).val();
-          datos=array.split("||");
-
-          $("#actualizarClienteModal").addClass("is-active");
-          $('#id').val(datos[0]);
-          $('#codigo').val(datos[1]);
-          $('#nombre').val(datos[2]);
-          $('#empresa').val(datos[3]);
-          $('#grupo').val(datos[4]);
-          $('#puesto').val(datos[5]);
-          $('#correo').val(datos[6]);
-          $('#tel1').val(datos[7]);
-          $('#tel2').val(datos[8]);
-          $('#clasificacion').val(datos[9]);
-          $('#utilidad').val(datos[10]);
-          $('#dcredito').val(datos[11]);
-          $('#consumo').val(datos[12]);
-
-        });
-      });
-      
-
+      $("#example").DataTable();
     </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
